@@ -1,9 +1,0 @@
-[x] get vegas data since 2017 (odds-getter.py)
-[x] get advanced analytics data since 2017 (nhl_adv_stats_getter.py)
-[x] get a list of players who played in each game since 2017 (get_active_players.py)
-[ ] one-hot encode which players played in each game since 2017 (combine players with data)
-[ ] add odds data onto the current data
-[ ] combine all collected data into one csv of X data
-[ ] use the results to generate a column for the binary y data
-[ ] train a neural network based on the X and y data already collected
--- to be continued --
