@@ -2,7 +2,7 @@ from nhlstats import list_games
 from nhlstats import list_shifts
 import pandas as pd
 from nhlstats.formatters import csv
-from format_team_name import get_three_letter_code
+from HELPER_three_let_code import get_three_letter_code
 
 games = list_games(start_date="2017-10-04", end_date="2022-12-31")
 teams_list = list()
