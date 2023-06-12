@@ -3,10 +3,7 @@ from nhlstats import list_shifts
 import pandas as pd
 from nhlstats.formatters import csv
 import sys
-import os
-
-sys.path.append("../scripts/")
-from HELPER_three_let_code import get_three_letter_code
+from scripts import HELPER_three_let_code
 
 games = list_games(start_date="2017-10-04", end_date="2022-12-31")
 teams_list = set()
@@ -16,14 +13,15 @@ for i, game in enumerate(games):
     team2 = game['home_team']
     game_id = game['game_id']
 
-    teams_list.add(get_three_letter_code(team1))
+    teams_list.add(HELPER_three_let_code.get_three_letter_code(team1))
 
 df = pd.read_csv(
-    "C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/2022odds.csv")
+    "C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/2022odds.csv")
 
 for i in range(200):
     team = df['Team'].iloc[i]
-    teams_list.add(get_three_letter_code(team))
+    teams_list.add(HELPER_three_let_code.get_three_letter_code(team))
 
 teams_list.discard(None)
+print(teams_list)
 print(len(teams_list))
