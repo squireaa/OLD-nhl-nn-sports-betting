@@ -7,3 +7,6 @@
 [ ] use the results to generate a column for the binary y data
 [ ] train a neural network based on the X and y data already collected
 -- to be continued --
+
+notes:
+I need to make sure I will be able to run a single function that is able to update the rosters for injury report
