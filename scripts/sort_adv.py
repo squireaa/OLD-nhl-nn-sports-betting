@@ -8,12 +8,11 @@ sys.path.append(parent_dir)
 from helper_methods.get_3let_code import get_three_letter_code
 from helper_methods.ohe_players import one_hottify
 
-games = list_games(start_date="2017-10-04", end_date="2022-12-31")
-home_code = "{0}-{1}".format(get_three_letter_code(games[0]['home_team']), games[0]['date'])
-away_code = "{0}-{1}".format(get_three_letter_code(games[0]['away_team']), games[0]['date'])
-
 # will eventually need to include all 5 years
 df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_adv_data2022.csv")
-print(df['Date'].iloc[4])
 my_id = "{0}-{1}".format(get_three_letter_code(df['Team'].iloc[0]), df['Date'].iloc[0])
 
+team_dfs = [group for _, group in df.groupby('Team')]
+print(len(team_dfs))
+
+print(df["Date"].iloc[0][5:7])
