@@ -1,3 +1,4 @@
+# =====builds the spreadsheet to be used for the X data=====
 from nhlstats import list_games
 import pandas as pd
 import os

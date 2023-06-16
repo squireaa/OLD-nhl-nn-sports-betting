@@ -1,3 +1,4 @@
+# ====converts full name to ABC code======
 team_dict = {
     "Anaheim Ducks" : "ANA",
     "Arizona Coyotes" : "ARI",

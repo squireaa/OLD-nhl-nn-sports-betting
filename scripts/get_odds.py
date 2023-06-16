@@ -1,3 +1,5 @@
+# =====CANT USE TIL SEASON======
+# gets the betting odds for the current slate of games
 from sbrscrape import Scoreboard
 import pandas as pd
 games = Scoreboard(sport="NHL").games[0] # see note at bottom
