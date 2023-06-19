@@ -7,9 +7,13 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
 sys.path.append(parent_dir)
-from scripts.get_arch_odds import *
+from scripts.X_get_arch_odds import *
+
+# list all the games being checked
 my_ids = ["NYR-2019-12-06", "NYI-2018-02-08", "ARI-2019-02-14", "NSH-2018-02-10", "COL-2018-11-21",
           "LAK-2018-02-20", "BOS-2022-01-04", "VGK-2021-05-08", "NYI-2020-09-17", "CGY-2019-03-15"]
+
+# get the real data to check against
 l1 = [[-110, 0], [109, 0], [6.5, 0, 1], [-110], [6.5, 0, 1], [-105], [1.5, 1], [-230]]
 l2 = [[-133, 0], [-115, 0], [6, 1, 1], [-110], [6, 1, 1], [-105], [-1.5, 0], [240]]
 l3 = [[135, 0], [141, 0], [5.5, 0, 1], [-110], [5.5, 0, 1], [-115], [1.5, 0], [-195]]
@@ -24,9 +28,7 @@ l10 = [[-300, 1], [-280, 1], [6, 0, 0], [-110], [6, 0, 0], [105], [-1.5, 1], [-1
 exp_lists = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10]
 
 
-# Import other required modules and define necessary variables
-
-
+# ensure the funcitons return the correct data
 @pytest.mark.parametrize("my_id, exp_list", [
     ("NYR-2019-12-06", l1),
     ("NYI-2018-02-08", l2),
