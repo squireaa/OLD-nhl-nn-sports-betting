@@ -46,4 +46,4 @@ def get_adv_metrics(year:int, num_years:int) -> None:
                 print("{0}/{1}: {2}/{3}".format(i+1, len(year_list), j+1, len(dates)))
     print("Done.")
 
-get_adv_metrics(2019, 2)
+get_adv_metrics(2018, 1)

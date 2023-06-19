@@ -19,5 +19,5 @@ for i in range(len(df)):
         player_set.add(player)
 
 df2 = pd.DataFrame()
-one_hottify(df2, player_set)
+df2 = one_hottify(df2, player_set)
 print(df2)
