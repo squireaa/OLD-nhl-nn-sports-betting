@@ -19,7 +19,7 @@ def get_open_ml(my_id:str) -> list:
     df = get_df(my_id)
     for index, row in df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["Open"])
+            l1.append(int(row["Open"]))
             if int(row["Final"]) > get_opp_score(my_id):
                 l1.append(1) 
             else:
@@ -32,7 +32,7 @@ def get_close_ml(my_id: str) -> list:
     df = get_df(my_id)
     for index, row in df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["Close"])
+            l1.append(int(row["Close"]))
             if int(row["Final"]) > get_opp_score(my_id):
                 l1.append(1)
             else:
@@ -40,34 +40,27 @@ def get_close_ml(my_id: str) -> list:
     return l1
 
 
-def get_close_ou_line(my_id: str) -> list:
-    l1 = []
-    df = get_df(my_id)
-    for index, row in df.iterrows():
-        if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["CloseOU"])
-    return l1
-
-
-def get_close_ou_odds(my_id: str) -> list:
-    l1 = []
-    df = get_df(my_id)
-    for index, row in df.iterrows():
-        if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["CloseOdds"])
-            if int(row["Final"]) + int(get_opp_score(my_id)) > row["CloseOU"]:
-                l1.append(1)
-            else:
-                l1.append(0)
-    return l1
-
-
+# return [line, over/under (over is 1), result]
 def get_open_ou_line(my_id: str) -> list:
     l1 = []
     df = get_df(my_id)
     for index, row in df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["OpenOU"])
+            ou = float(row["OpenOU"])
+            l1.append(ou)
+            total = int(row["Final"]) + int(get_opp_score(my_id))
+            if row["VH"] == "V":
+                l1.append(1)
+                if total > ou:
+                    l1.append(1)
+                else:
+                    l1.append(0)
+            else:
+                l1.append(0)
+                if total < ou:
+                    l1.append(1)
+                else:
+                    l1.append(0)
     return l1
 
 
@@ -80,12 +73,48 @@ def get_open_ou_odds(my_id: str) -> list:
     return l1
 
 
+# return [line, over/under (over is 1), result]
+def get_close_ou_line(my_id: str) -> list:
+    l1 = []
+    df = get_df(my_id)
+    for index, row in df.iterrows():
+        if get_three_letter_code(row["Team"]) == my_id[:3]:
+            ou = float(row["CloseOU"])
+            l1.append(ou)
+            total = int(row["Final"]) + int(get_opp_score(my_id))
+            if row["VH"] == "V":
+                l1.append(1)
+                if total > ou:
+                    l1.append(1)
+                else:
+                    l1.append(0)
+            else:
+                l1.append(0)
+                if total < ou:
+                    l1.append(1)
+                else:
+                    l1.append(0)
+    return l1
+
+
+def get_close_ou_odds(my_id: str) -> list:
+    l1 = []
+    df = get_df(my_id)
+    for index, row in df.iterrows():
+        if get_three_letter_code(row["Team"]) == my_id[:3]:
+            l1.append(int(row["CloseOdds"]))
+    return l1
+
 def get_puck_line(my_id: str) -> list:
     l1 = []
     df = get_df(my_id)
     for index, row in df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["PL"])
+            l1.append(float(row["PL"]))
+            if (int(row["Final"]) + float(row["PL"])) > int(get_opp_score(my_id)):
+                l1.append(1)
+            else:
+                l1.append(0)
     return l1
 
 
@@ -94,7 +123,7 @@ def get_puck_line_odds(my_id: str) -> list:
     df = get_df(my_id)
     for index, row in df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
-            l1.append(row["PLOdds"])
+            l1.append(int(row["PLOdds"]))
     return l1
 
 def get_df(my_id:str) -> pd.DataFrame:
@@ -124,4 +153,5 @@ def get_opp_score(my_id:str) -> int:
     raise ValueError("Something went wrong.")
 
 
-print(get_close_ou_odds("EDM-2021-10-13"))
+print(get_puck_line("BUF-2021-10-14"))
+print(get_puck_line_odds("BUF-2021-10-14"))
