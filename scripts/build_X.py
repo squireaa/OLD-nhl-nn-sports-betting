@@ -17,3 +17,4 @@ away_code = "{0}-{1}".format(get_three_letter_code(games[0]['away_team']), games
 df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_adv_data2022.csv")
 my_id = "{0}-{1}".format(get_three_letter_code(df['Team'].iloc[0]), df['Date'].iloc[0])
 
+# dont forget opp team data

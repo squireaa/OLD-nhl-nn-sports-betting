@@ -62,7 +62,9 @@ team_dict = {
     "Boston": "BOS",
     "St.Louis": "STL",
     "Calgary": "CGY",
-    "SanJose": "SJS"
+    "SanJose": "SJS",
+    "Nashville": "NSH",
+    "LosAngeles": "LAK"
 }
 
 def get_three_letter_code(full_name:str):

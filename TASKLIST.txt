@@ -2,8 +2,8 @@
 [x] get advanced analytics data since 2017 (nhl_adv_stats_getter.py)
 [x] get a list of players who played in each game since 2017 (get_active_players.py)
 [x] figure out a way to average the data from the last n games
-[ ] one-hot encode which players played in each game since 2017 (combine players with data)
-[ ] add odds data onto the current data
+[x] one-hot encode which players played in each game since 2017 (combine players with data)
+[x] add odds data onto the current data
 [ ] combine all collected data into one csv of X data
 [ ] use the results to generate a column for the binary y data
 [ ] train a neural network based on the X and y data already collected
@@ -12,4 +12,3 @@
 notes:
 I need to make sure I will be able to run a single function that is able to update the rosters for injury report
 Also need to make sure that I have the other teams injury report next to the first teams
-Remember that the result of the over is based on always betting over, so a confidence of 20% that a bet is going to hit is actually good and needs to be checked for

@@ -32,7 +32,7 @@ twenty_dict = {}
 twenty_one_dict = {}
 twenty_two_dict = {}
 
-eighteen_df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_adv_data2018.csv")
+eighteen_df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_dropped_2018.csv")
 nineteen_df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_dropped_2019.csv")
 twenty_df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_dropped_2020.csv")
 twenty_one_df = pd.read_csv("C:/Users/Owner/Desktop/cs stuff/Open Source/nhl-nn-sports-betting/data/nhl_dropped_2021.csv")

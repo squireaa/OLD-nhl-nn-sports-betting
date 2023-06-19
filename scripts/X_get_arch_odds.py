@@ -148,10 +148,8 @@ def get_opp_score(my_id:str) -> int:
     for index, row in small_df.iterrows():
         if get_three_letter_code(row["Team"]) == my_id[:3]:
             if (index % 2) == 0:
-                return df["Final"].iloc[index + 1]
-            return df["Final"].iloc[index - 1]
+                return int(df["Final"].iloc[index + 1])
+            return int(df["Final"].iloc[index - 1])
     raise ValueError("Something went wrong.")
 
-
-print(get_puck_line("BUF-2021-10-14"))
-print(get_puck_line_odds("BUF-2021-10-14"))
+print(get_close_ml("NSH-2018-02-10"))
