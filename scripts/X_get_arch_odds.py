@@ -151,5 +151,3 @@ def get_opp_score(my_id:str) -> int:
                 return int(df["Final"].iloc[index + 1])
             return int(df["Final"].iloc[index - 1])
     raise ValueError("Something went wrong.")
-
-print(get_close_ml("NSH-2018-02-10"))

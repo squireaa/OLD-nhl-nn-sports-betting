@@ -32,6 +32,7 @@ team_dict = {
     "Vegas Golden Knights" : "VGK",
     "Washington Capitals" : "WSH",
     "Winnipeg Jets" : "WPG",
+    "St Louis Blues" : "STL",
 
     "Pittsburgh": "PIT",
     "TampaBay": "TBL",

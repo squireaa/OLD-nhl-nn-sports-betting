@@ -1,3 +1,4 @@
+import imghdr
 import pandas as pd
 import ast
 import sys
@@ -21,13 +22,11 @@ player_set_list = list(player_set)
 
 def fill_ohe(my_id:str) -> list:
     df2 = one_hottify(pd.DataFrame(), player_set_list)
-    player_list = df[df['my_id'] == my_id]['player_list']
+    print(my_id)
+    player_list = (df[df['my_id'] == my_id]['player_list']).values[0]
     for player in player_list:
         df2[player] = int(0)
         df2.loc[0, player] = int(1)
     df2 = df2.fillna(int(0))
     return df2.iloc[0].tolist()
 
-
-print(fill_ohe("WPG-2017-10-04"))
-fill_ohe("SJS-2017-10-05")

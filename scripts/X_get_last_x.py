@@ -44,7 +44,7 @@ twenty_group = [group for _, group in twenty_df.groupby('Team')]
 twenty_one_group = [group for _, group in twenty_one_df.groupby('Team')]
 twenty_two_group = [group for _, group in twenty_two_df.groupby('Team')]
 
-# add_group_to_dict(eighteen_dict, eighteen_group)
+add_group_to_dict(eighteen_dict, eighteen_group)
 add_group_to_dict(nineteen_dict, nineteen_group)
 add_group_to_dict(twenty_dict, twenty_group)
 add_group_to_dict(twenty_one_dict, twenty_one_group)
@@ -70,7 +70,7 @@ def get_last_n(my_id: str, how_many: int) -> list:
     working_df = working_df.reset_index()
     index = working_df['Date'].tolist().index(my_id[4:]) - 1
     if index == -1:
-        return [] * 62
+        return [None] * 62
 
     # average the values of the last n games
     start = working_df.iloc[index].values.tolist()
