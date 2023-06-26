@@ -37,7 +37,11 @@ def get_main_metrics(my_id:str) -> list:
     to_return.extend([get_rest_days(my_id)])
     return to_return
 
+def test_method(my_id):
+    get_last_n(my_id, 1)
+    get_last_n(my_id, 3)
+    # fill_ohe(my_id)
+    get_rest_days(my_id)
 
-index = 0
-for i in range(0, len(every_my_id), 2):
-    (get_main_metrics(every_my_id[i]))
+for my_id in every_my_id:
+    test_method(my_id)

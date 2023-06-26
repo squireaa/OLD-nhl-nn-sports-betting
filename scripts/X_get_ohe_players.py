@@ -22,7 +22,6 @@ player_set_list = list(player_set)
 
 def fill_ohe(my_id:str) -> list:
     df2 = one_hottify(pd.DataFrame(), player_set_list)
-    print(my_id)
     player_list = (df[df['my_id'] == my_id]['player_list']).values[0]
     for player in player_list:
         df2[player] = int(0)
