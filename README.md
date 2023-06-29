@@ -1,2 +1,5 @@
 # nhl-nn-sports-betting
-Uses machine learning to predict outcomes of NHL games
+This is an unfinished early version of the new "nn-nhl" repository.
+
+new repo:
+https://github.com/squireaa/nn-nhl
